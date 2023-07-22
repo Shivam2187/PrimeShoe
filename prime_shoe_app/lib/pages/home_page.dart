@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 18,
             ),
-              MostPopular()
+              const MostPopular()
           ],
         ),
       )),

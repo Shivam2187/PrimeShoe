@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prime_shoe_app/pages/home_page.dart';
 
+import '../pages/wishlist_apge.dart';
+
 class AppNavigationBar extends StatelessWidget {
   final void Function(int)? onTap;
   final int selectedIndex;
@@ -12,21 +14,22 @@ class AppNavigationBar extends StatelessWidget {
   });
 
   static const List<Widget> allPages = [
-     HomePage(),
-    Center(child: Text('Page 2')),
-    Center(child: Text('Page 3')),
-    Center(child: Text('Page 4')),
+    HomePage(),
+    WishListPage(),
+    Center(child: Text('Store')),
+    Center(child: Text('Cart')),
+    Center(child: Text('Profile')),
   ];
 
   static final List<BottomNavigationBarItem> navBarItems = [
+    const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.access_alarms), label: "Home"),
+        icon: Icon(Icons.favorite_outline), label: "Wishlist"),
+    const BottomNavigationBarItem(icon: Icon(Icons.store), label: "Store"),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.accessible_forward_outlined), label: "Cart"),
+        icon: Icon(Icons.shopping_cart), label: "Cart"),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.card_travel), label: "Order"),
-    const BottomNavigationBarItem(
-        icon: Icon(Icons.accessible_forward_outlined), label: "Profile"),
+        icon: Icon(Icons.account_box_rounded), label: "Profile"),
   ];
 
   @override

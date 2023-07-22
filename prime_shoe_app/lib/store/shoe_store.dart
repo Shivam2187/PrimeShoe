@@ -10,15 +10,11 @@ class ShoeStore {
 
   void dispose() {}
   void wishListedOnTap() {
-    runInAction(
-      () {
-        if (isWishlisted.value == false) {
-          isWishlisted.value = true;
-        } else {
-          isWishlisted.value = false;
-        }
-      },
-    );
+    if (isWishlisted.value == false) {
+      runInAction(() => isWishlisted.value = true);
+    } else {
+      runInAction(() => isWishlisted.value = false);
+    }
   }
 
   void selectedNavBarOnTap(int index) {

@@ -1,77 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../store/shoe_store.dart';
+import '../model/dummy_prduct_details.dart';
 
 class MostPopular extends StatelessWidget {
-  MostPopular({super.key});
-  final store = ShoeStore();
+  const MostPopular({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Observer(
-      builder: (context) => Wrap(
-        spacing: 30,
-        alignment: WrapAlignment.start,
-        direction: Axis.horizontal,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        children: [
-          MostPopularWidget(
-            brandName: 'Puma',
-            imagePath: 'assets/shoe/pumaShoe.png',
-            price: 15000,
-            rating: 4.5,
-            shoeColor: 'Solid Adivat',
-            shoeType: 'Running shoe',
-            onPressed: store.wishListedOnTap,
+    return Column(
+      children: [
+        Row(
+          children: [
+            const Text(
+              'Most Popular',
+              style: TextStyle(fontSize: 16),
+            ),
+            const Spacer(),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                'SEE ALL',
+                style: TextStyle(fontSize: 12, color: Colors.black),
+              ),
+            )
+          ],
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: dummyProducts.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 20,
+              crossAxisSpacing: 10,
+              childAspectRatio: .65),
+          itemBuilder: (context, index) => MostPopularWidget(
+            brandName: dummyProducts[index].brandName,
+            imagePath: 'assets/shoe/puma 1.png',
+            price: dummyProducts[index].productPrice,
+            isWishListed: true,
+            rating: dummyProducts[index].rating,
+            shoeColor: dummyProducts[index].shoeColor,
+            shoeType: dummyProducts[index].shoeType,
           ),
-          MostPopularWidget(
-            brandName: 'Puma',
-            imagePath: 'assets/shoe/adidasShoe.png',
-            price: 15000,
-            rating: 4.5,
-            shoeColor: 'Men Black Solid',
-            shoeType: 'Colourblocked  Sneakers',
-            onPressed: store.wishListedOnTap,
-          ),
-          MostPopularWidget(
-            brandName: 'Puma',
-            imagePath: 'assets/shoe/pumaShoe.png',
-            price: 15000,
-            rating: 4.5,
-            shoeColor: 'Solid Adivat',
-            shoeType: 'Running shoe',
-            onPressed: store.wishListedOnTap,
-          ),
-          MostPopularWidget(
-            brandName: 'Puma',
-            imagePath: 'assets/shoe/adidasShoe.png',
-            price: 15000,
-            rating: 4.5,
-            shoeColor: 'Men Black Solid',
-            shoeType: 'Colourblocked  Sneakers',
-            onPressed: store.wishListedOnTap,
-          ),
-          MostPopularWidget(
-            brandName: 'Puma',
-            imagePath: 'assets/shoe/pumaShoe.png',
-            price: 15000,
-            rating: 4.5,
-            shoeColor: 'Solid Adivat',
-            shoeType: 'Running shoe',
-            onPressed: store.wishListedOnTap,
-          ),
-          MostPopularWidget(
-            brandName: 'Puma',
-            imagePath: 'assets/shoe/adidasShoe.png',
-            price: 15000,
-            rating: 4.5,
-            shoeColor: 'Men Black Solid',
-            shoeType: 'Colourblocked  Sneakers',
-            onPressed: store.wishListedOnTap,
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -84,8 +60,9 @@ class MostPopularWidget extends StatelessWidget {
   final num price;
   final String brandName;
   final void Function()? onPressed;
+  final bool isWishListed;
 
-  MostPopularWidget(
+  const MostPopularWidget(
       {super.key,
       required this.imagePath,
       required this.shoeType,
@@ -93,81 +70,82 @@ class MostPopularWidget extends StatelessWidget {
       required this.rating,
       required this.price,
       required this.brandName,
-      this.onPressed});
-  final store = ShoeStore();
+      this.onPressed,
+      required this.isWishListed});
+
   @override
   Widget build(BuildContext context) {
-    return Observer(
-      builder: (context) => SizedBox(
-        width: 160,
-        height: 270,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                ClipRRect(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          decoration: const BoxDecoration(
+              color: Color.fromRGBO(241, 241, 241, 1),
+              borderRadius: BorderRadius.all(Radius.circular(15))),
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: ClipRRect(
                   borderRadius: const BorderRadius.all(
-                    Radius.circular(15),
+                    Radius.circular(0),
                   ),
-                  child: SizedBox(
-                    height: 160,
-                    width: 160,
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.fill,
-                    ),
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
-                Positioned(
-                  right: 6,
-                  top: 6,
-                  child: IconButton(
-                    onPressed: onPressed,
-                    icon: store.isWishlisted.value
-                        ? const Icon(Icons.favorite)
-                        : const Icon(Icons.favorite_border),
-                    // icon: Image.asset('assets/heart.png'),
-                    iconSize: 30,
-                  ),
-                )
-              ],
+              ),
+              Positioned(
+                right: 6,
+                top: 6,
+                child: IconButton(
+                  isSelected: isWishListed,
+                  selectedIcon: const Icon(Icons.favorite),
+                  onPressed: onPressed,
+                  icon: const Icon(Icons.favorite_border),
+
+                  // icon: Image.asset('assets/heart.png'),
+                  iconSize: 30,
+                ),
+              )
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        Text(
+          brandName,
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          shoeColor,
+          style: const TextStyle(fontSize: 12),
+        ),
+        Text(
+          shoeType,
+          style: const TextStyle(fontSize: 12),
+        ),
+        Row(
+          children: [
+            Text(
+              rating.toString(),
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
-              height: 12,
+              width: 5,
             ),
-            Text(
-              brandName,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              shoeColor,
-              style: const TextStyle(fontSize: 12),
-            ),
-            Text(
-              shoeType,
-              style: const TextStyle(fontSize: 12),
-            ),
-            Row(
-              children: [
-                Text(
-                  rating.toString(),
-                  style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Image.asset('assets/star.png')
-              ],
-            ),
-            Text(
-              'Rs. $price',
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
+            Image.asset('assets/star.png')
           ],
         ),
-      ),
+        Text(
+          'Rs. $price',
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        ),
+      ],
     );
   }
 }

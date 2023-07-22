@@ -17,14 +17,12 @@ class AppHeader extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {
-
+              // Navigator.of(context).push(MaterialPageRoute(
+              //     builder: (context) => const WishListPage()));
             },
             icon: const Icon(Icons.favorite_border_outlined),
             // icon: Image.asset('assets/heart.png'),
             iconSize: 30,
-            
-            
-
           )
         ],
       ),
