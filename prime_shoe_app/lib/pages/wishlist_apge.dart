@@ -23,7 +23,7 @@ class WishListPage extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
-                childAspectRatio: .65),
+                childAspectRatio: .5),
             itemBuilder: (context, index) => MostPopularWidget(
               brandName: dummyWishlistProducts[index].brandName,
               imagePath:  dummyWishlistProducts[index].imagePath,

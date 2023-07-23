@@ -36,7 +36,7 @@ class MostPopular extends StatelessWidget {
               crossAxisCount: 2,
               mainAxisSpacing: 20,
               crossAxisSpacing: 10,
-              childAspectRatio: .65),
+              childAspectRatio: .5),
           itemBuilder: (context, index) => MostPopularWidget(
             brandName: dummyProducts[index].brandName,
             imagePath: 'assets/shoe/puma 1.png',
@@ -90,14 +90,15 @@ class MostPopularWidget extends StatelessWidget {
                   horizontal: 20,
                 ),
                 child: Center(
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(0),
-                    ),
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.fill,
-                      
+                  child: Expanded(
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(0),
+                      ),
+                      child: Image.asset(
+                        imagePath,
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                 ),
