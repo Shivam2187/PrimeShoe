@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
 
+import '../model/dummy_brand_details.dart';
+
 class TopBrand extends StatelessWidget {
   const TopBrand({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Wrap(
+    return Wrap(
       spacing: 30,
-      alignment: WrapAlignment.start,
+      alignment: WrapAlignment.center,
       direction: Axis.horizontal,
-      crossAxisAlignment: WrapCrossAlignment.center,
-      children: [
-        TopBrandWidget(imagePath: 'assets/brand/nike.png', brandName: 'Nike'),
-        TopBrandWidget(imagePath: 'assets/brand/puma.png', brandName: 'Puma'),
-        TopBrandWidget(
-            imagePath: 'assets/brand/adidas.png', brandName: 'Adidas'),
-        TopBrandWidget(imagePath: 'assets/brand/vans.png', brandName: 'Vans'),
-        TopBrandWidget(
-            imagePath: 'assets/brand/redTape.png', brandName: 'Red Tape'),
-        TopBrandWidget(imagePath: 'assets/brand/fila.png', brandName: 'Fila'),
-        TopBrandWidget(
-            imagePath: 'assets/brand/underArmer.png', brandName: 'Under Armer'),
-        TopBrandWidget(
-            imagePath: 'assets/brand/redTape.png', brandName: 'Red Tape'),
-      ],
+      crossAxisAlignment: WrapCrossAlignment.start,
+      children: List<Widget>.generate(
+        topBrandModel.length,
+        (int index) {
+          return TopBrandWidget(
+              imagePath: topBrandModel.elementAt(index).imagePath,
+              brandName: topBrandModel.elementAt(index).brandName);
+        },
+      ).toList(),
     );
   }
 }
@@ -41,6 +37,7 @@ class TopBrandWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
           width: 57,

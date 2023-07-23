@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prime_shoe_app/core/color.dart';
 
 InputDecoration inputDecoration(
   String hint,
@@ -8,14 +9,14 @@ InputDecoration inputDecoration(
   return InputDecoration(
     prefixIcon: prefixIconPath != null
         ? Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Image.asset(
-            prefixIconPath,
-            fit: BoxFit.fill,
-          ),
-        )
+            padding: const EdgeInsets.all(12.0),
+            child: Image.asset(
+              prefixIconPath,
+              fit: BoxFit.fill,
+            ),
+          )
         : null,
-   isDense: true,
+    isDense: true,
     contentPadding: const EdgeInsets.symmetric(vertical: 20),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30.0),
@@ -37,15 +38,15 @@ InputDecoration inputDecoration(
     filled: true,
     hintStyle: const TextStyle(fontSize: 16, color: Colors.grey),
     hintText: hint,
-    fillColor: const Color.fromRGBO(241, 241, 241, 1),
+    fillColor: backgroundColor,
     suffixIcon: suffixIconPath != null
         ? Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Image.asset(
-            suffixIconPath,
-            fit: BoxFit.fill,
-          ),
-        )
+            padding: const EdgeInsets.all(12.0),
+            child: Image.asset(
+              suffixIconPath,
+              fit: BoxFit.fill,
+            ),
+          )
         : null,
   );
 }

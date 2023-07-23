@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:prime_shoe_app/store/shoe_store.dart';
 
 class AppHeader extends StatelessWidget {
-  const AppHeader({super.key});
+  AppHeader({super.key});
+
+  final store = ShoeStore();
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +20,9 @@ class AppHeader extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {
-              // Navigator.of(context).push(MaterialPageRoute(
-              //     builder: (context) => const WishListPage()));
+              store.selectedNavBarOnTap(0);
             },
             icon: const Icon(Icons.favorite_border_outlined),
-            // icon: Image.asset('assets/heart.png'),
             iconSize: 30,
           )
         ],

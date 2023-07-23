@@ -79,6 +79,7 @@ class MostPopularWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
+          height: 160,
           decoration: const BoxDecoration(
               color: Color.fromRGBO(241, 241, 241, 1),
               borderRadius: BorderRadius.all(Radius.circular(15))),
@@ -88,13 +89,16 @@ class MostPopularWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
                 ),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(0),
-                  ),
-                  child: Image.asset(
-                    imagePath,
-                    fit: BoxFit.fitHeight,
+                child: Center(
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(0),
+                    ),
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.fill,
+                      
+                    ),
                   ),
                 ),
               ),

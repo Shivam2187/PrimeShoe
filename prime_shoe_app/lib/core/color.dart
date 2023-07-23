@@ -2,4 +2,6 @@
 
 // Color? primaryColor = Colors.blue;
 
-// Color? backgroundColor = const Color(0xffe6e6e6);
+import 'package:flutter/material.dart';
+
+Color? backgroundColor = const Color.fromRGBO(241, 241, 241, 1);

@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            const AppHeader(),
+              AppHeader(),
             TextField(
               decoration: inputDecoration("Search here...",
                   'assets/searchIcon.png', 'assets/filterIcon.png'),
