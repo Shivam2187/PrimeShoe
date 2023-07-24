@@ -7,7 +7,7 @@ List<ProductDetails> dummyProducts = [
       productPrice: 15000,
       rating: 4.5,
       shoeColor: 'Men Black Solid',
-      shoeType: 'Colourblocked  Sneakers'),
+      shoeType: 'Running Shoe'),
   ProductDetails(
       brandName: 'Puma',
       imagePath: 'assets/shoe/pumaShoe.png',
@@ -21,7 +21,7 @@ List<ProductDetails> dummyProducts = [
       productPrice: 15000,
       rating: 4.5,
       shoeColor: 'Men Black Solid',
-      shoeType: 'Colourblocked  Sneakers'),
+      shoeType: 'Running Shoe'),
   ProductDetails(
       brandName: 'Puma',
       imagePath: 'assets/shoe/pumaShoe.png',
@@ -35,7 +35,7 @@ List<ProductDetails> dummyProducts = [
       productPrice: 15000,
       rating: 4.5,
       shoeColor: 'Men Black Solid',
-      shoeType: 'Colourblocked  Sneakers'),
+      shoeType: 'Running Shoe'),
   ProductDetails(
       brandName: 'Puma',
       imagePath: 'assets/shoe/pumaShoe.png',
@@ -52,7 +52,7 @@ List<ProductDetails> dummyWishlistProducts = [
       productPrice: 15000,
       rating: 4.5,
       shoeColor: 'Men Black Solid',
-      shoeType: 'Colourblocked  Sneakers'),
+      shoeType: 'Running Shoe'),
   ProductDetails(
       brandName: 'Puma',
       imagePath: 'assets/wishlist/PngItem2.png',
@@ -66,7 +66,7 @@ List<ProductDetails> dummyWishlistProducts = [
       productPrice: 15000,
       rating: 4.5,
       shoeColor: 'Men Black Solid',
-      shoeType: 'Colourblocked  Sneakers'),
+      shoeType: 'Running Shoe'),
   ProductDetails(
       brandName: 'Puma',
       imagePath: 'assets/wishlist/PngItem4.png',
@@ -80,7 +80,7 @@ List<ProductDetails> dummyWishlistProducts = [
       productPrice: 15000,
       rating: 4.5,
       shoeColor: 'Men Black Solid',
-      shoeType: 'Colourblocked  Sneakers'),
+      shoeType: 'Running Shoe'),
   ProductDetails(
       brandName: 'Puma',
       imagePath: 'assets/wishlist/PngItem6.png',

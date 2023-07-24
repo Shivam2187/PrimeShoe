@@ -13,7 +13,7 @@ class ProductDetails {
   @JsonKey(name: 'shoeColor')
   String shoeColor;
   @JsonKey(name: 'productPrice')
-  double productPrice;
+  num productPrice;
   @JsonKey(name: 'imagePath')
   String imagePath;
 
