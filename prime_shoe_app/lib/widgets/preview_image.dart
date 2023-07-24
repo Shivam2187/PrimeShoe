@@ -20,41 +20,44 @@ class FilledPreviewImage extends StatelessWidget {
         child: Row(
           children: [
             Flexible(
+              fit: FlexFit.tight,
+              flex: 4,
               child: Padding(
                 padding: const EdgeInsets.only(left: 36, top: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      percentageDiscount,
-                      style: const TextStyle(
-                          fontSize: 29,
-                          fontFamily: 'Quicksand',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    const Text(
-                      'Today Special',
-                      style: TextStyle(
-                        fontSize: 19,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                    Text.rich(
+                      TextSpan(
+                        text: percentageDiscount,
+                        style: const TextStyle(
+                            fontSize: 29,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                        children: const [
+                          TextSpan(
+                            text: '\nToday Special \n',
+                            style: TextStyle(
+                              fontSize: 19,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text:
+                                'Get discount for every order. Only valid today.',
+                            style: TextStyle(fontSize: 10, color: Colors.white),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    const Text(
-                      'Get discount for every order. Only valid today',
-                      style: TextStyle(fontSize: 12, color: Colors.white),
-                      maxLines: 2,
-                    )
                   ],
                 ),
               ),
             ),
             Flexible(
+              flex: 3,
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(
                   Radius.circular(22),

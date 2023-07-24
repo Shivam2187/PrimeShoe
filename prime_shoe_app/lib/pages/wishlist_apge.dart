@@ -21,9 +21,10 @@ class WishListPage extends StatelessWidget {
             itemCount: dummyWishlistProducts.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 20,
+                mainAxisSpacing: 15,
                 crossAxisSpacing: 20,
-                childAspectRatio: .5),
+                childAspectRatio: .75
+                ),
             itemBuilder: (context, index) => MostPopularWidget(
               brandName: dummyWishlistProducts[index].brandName,
               imagePath:  dummyWishlistProducts[index].imagePath,

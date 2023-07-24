@@ -24,7 +24,7 @@ class AppNavigationBar extends StatelessWidget {
   static final List<BottomNavigationBarItem> navBarItems = [
     const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.favorite_outline), label: "Wishlist"),
+        icon: Icon(Icons.favorite), label: "Wishlist"),
     const BottomNavigationBarItem(icon: Icon(Icons.store), label: "Store"),
     const BottomNavigationBarItem(
         icon: Icon(Icons.shopping_cart), label: "Cart"),

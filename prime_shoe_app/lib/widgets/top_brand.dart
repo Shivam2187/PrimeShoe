@@ -7,20 +7,18 @@ class TopBrand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      
-      spacing: 30,
-      alignment: WrapAlignment.center,
-      direction: Axis.horizontal,
-      crossAxisAlignment: WrapCrossAlignment.start,
-      children: List<Widget>.generate(
-        topBrandModel.length,
-        (int index) {
-          return TopBrandWidget(
-              imagePath: topBrandModel.elementAt(index).imagePath,
-              brandName: topBrandModel.elementAt(index).brandName);
-        },
-      ).toList(),
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: topBrandModel.length,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          mainAxisSpacing: 5,
+          crossAxisSpacing: 30,
+          childAspectRatio: .65),
+      itemBuilder: (context, index) => TopBrandWidget(
+          imagePath: topBrandModel.elementAt(index).imagePath,
+          brandName: topBrandModel.elementAt(index).brandName),
     );
   }
 }
@@ -56,9 +54,11 @@ class TopBrandWidget extends StatelessWidget {
         const SizedBox(
           height: 6,
         ),
-        Text(
-          brandName,
-          style: const TextStyle(fontSize: 14),
+        FittedBox(
+          child: Text(
+            brandName,
+            style: const TextStyle(fontSize: 12),
+          ),
         )
       ],
     );
