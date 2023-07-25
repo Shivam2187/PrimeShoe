@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prime_shoe_app/core/constants.dart';
 import 'package:prime_shoe_app/widgets/app_header.dart';
 import 'package:prime_shoe_app/widgets/most_popular.dart';
 import 'package:prime_shoe_app/widgets/top_brand.dart';
@@ -13,23 +14,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-
       child: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-              AppHeader(),
+            AppHeader(),
             TextField(
-              decoration: inputDecoration("Search here...",
-                  'assets/searchIcon.png', 'assets/filterIcon.png'),
+              decoration: inputDecoration(ConstantUtils.searchHere,
+                  ConstantUtils.searchIconPath, ConstantUtils.filterIconPath),
             ),
             const SizedBox(
               height: 25,
             ),
             const FilledPreviewImage(
-              percentageDiscount: '25%',
-              imagePath: 'assets/todayShoe.png',
+              percentageDiscount: ConstantUtils.percentageDiscount +
+                  ConstantUtils.percentageSymbol,
+              imagePath: ConstantUtils.todayShoeImagePath,
             ),
             const SizedBox(
               height: 30,
@@ -38,7 +39,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 18,
             ),
-              const MostPopular()
+            const MostPopular()
           ],
         ),
       )),

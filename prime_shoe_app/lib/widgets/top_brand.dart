@@ -42,9 +42,6 @@ class TopBrandWidget extends StatelessWidget {
           width: 57,
           height: 57,
           child: ClipRRect(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(0),
-            ),
             child: Image.asset(
               imagePath,
               fit: BoxFit.fill,

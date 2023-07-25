@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prime_shoe_app/core/constants.dart';
 import 'package:prime_shoe_app/store/shoe_store.dart';
 
 class AppHeader extends StatelessWidget {
@@ -15,7 +16,7 @@ class AppHeader extends StatelessWidget {
           SizedBox(
             height: 46,
             width: 148,
-            child: Image.asset('assets/shoeRack.png'),
+            child: Image.asset(ConstantUtils.shoeRackIconPath),
           ),
           const Spacer(),
           IconButton(

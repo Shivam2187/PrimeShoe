@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prime_shoe_app/core/constants.dart';
 
 class ActionChoiceExample extends StatefulWidget {
   const ActionChoiceExample({super.key});
@@ -9,7 +10,7 @@ class ActionChoiceExample extends StatefulWidget {
 
 class _ActionChoiceExampleState extends State<ActionChoiceExample> {
   int? _value = 1;
-  List<String> brandName = ['All', 'Nike', 'Adidas', 'Puma'];
+  List<String> brandName = ConstantUtils.brandName;
 
   @override
   Widget build(BuildContext context) {

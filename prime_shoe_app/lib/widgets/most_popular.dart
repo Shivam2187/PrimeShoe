@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prime_shoe_app/core/color.dart';
+import 'package:prime_shoe_app/core/constants.dart';
 
 import '../model/dummy_prduct_details.dart';
 import 'package:intl/intl.dart';
@@ -119,8 +120,6 @@ class MostPopularWidget extends StatelessWidget {
                       selectedIcon: const Icon(Icons.favorite),
                       onPressed: onPressed,
                       icon: const Icon(Icons.favorite_border),
-
-                      // icon: Image.asset('assets/heart.png'),
                       iconSize: 30,
                     ),
                   )
@@ -159,7 +158,7 @@ class MostPopularWidget extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  Image.asset('assets/star.png')
+                  Image.asset(ConstantUtils.searchIconPath)
                 ],
               ),
             ),

@@ -17,7 +17,7 @@ InputDecoration inputDecoration(
           )
         : null,
     isDense: true,
-    contentPadding: const EdgeInsets.symmetric(vertical: 20),
+    contentPadding: const EdgeInsets.symmetric(vertical: 18),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30.0),
       borderSide: const BorderSide(color: Colors.white),

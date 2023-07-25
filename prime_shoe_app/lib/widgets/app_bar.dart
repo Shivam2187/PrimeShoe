@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prime_shoe_app/core/constants.dart';
 
 AppBar defaultAppBar() {
   return AppBar(
@@ -8,8 +9,7 @@ AppBar defaultAppBar() {
     ),
     actions: <Widget>[
       IconButton(
-        icon: Image.asset('assets/searchIcon.png'),
-        tooltip: 'Comment Icon',
+        icon: Image.asset(ConstantUtils.searchIconPath),
         onPressed: () {},
         color: Colors.black,
       ),
@@ -18,7 +18,6 @@ AppBar defaultAppBar() {
     elevation: 0,
     leading: IconButton(
       icon: const Icon(Icons.chevron_left_sharp),
-      tooltip: 'Menu Icon',
       onPressed: () {},
       color: Colors.black,
     ),
