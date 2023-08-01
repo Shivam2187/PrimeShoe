@@ -1,9 +1,8 @@
 import 'package:mobx/mobx.dart';
 
 class ShoeStore {
-  final Observable<bool> switchState = Observable(false);
-
   final Observable<int> selectedNavBar = Observable(0);
+
   final Observable<bool> isWishlisted = Observable(false);
 
   void init() {}

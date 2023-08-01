@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class ConstantUtils {
   static const String currencySymbol = '\u{20B9}';
   static const String percentageSymbol = '%';
@@ -10,4 +12,9 @@ class ConstantUtils {
   static const String startImagePath = 'assets/star.png';
   static const String todayShoeImagePath = 'assets/todayShoe.png';
   static const String percentageDiscount = '25';
+  static NumberFormat format = NumberFormat.currency(
+    locale: 'HI',
+    symbol: '₹ ',
+    decimalDigits: 0,
+  );
 }

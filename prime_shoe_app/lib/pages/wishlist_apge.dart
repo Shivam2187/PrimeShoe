@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prime_shoe_app/core/constants.dart';
 import 'package:prime_shoe_app/widgets/app_bar.dart';
 
 import '../model/dummy_prduct_details.dart';
@@ -27,8 +28,8 @@ class WishListPage extends StatelessWidget {
             itemBuilder: (context, index) => MostPopularWidget(
               brandName: dummyWishlistProducts[index].brandName,
               imagePath: dummyWishlistProducts[index].imagePath,
-              price: format.format(dummyWishlistProducts[index].productPrice),
-              isWishListed: true,
+              price: ConstantUtils.format
+                  .format(dummyWishlistProducts[index].productPrice),
               rating: dummyWishlistProducts[index].rating,
               shoeColor: dummyWishlistProducts[index].shoeColor,
               shoeType: dummyWishlistProducts[index].shoeType,
