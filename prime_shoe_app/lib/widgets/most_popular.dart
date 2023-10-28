@@ -32,25 +32,23 @@ class MostPopular extends StatelessWidget {
         const SizedBox(
           height: 12,
         ),
-        Observer(
-          builder: (context) => GridView.count(
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            crossAxisCount: 2,
-            childAspectRatio: .5,
-            children: List<Widget>.generate(
-              dummyProducts.length,
-              (index) => MostPopularWidget(
-                brandName: dummyProducts[index].brandName,
-                imagePath: dummyProducts[index].imagePath,
-                price: ConstantUtils.format
-                    .format(dummyProducts[index].productPrice),
-                rating: dummyProducts[index].rating,
-                shoeColor: dummyProducts[index].shoeColor,
-                shoeType: dummyProducts[index].shoeType,
-              ),
+        GridView.count(
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          crossAxisCount: 2,
+          childAspectRatio: .5,
+          children: List<Widget>.generate(
+            dummyProducts.length,
+            (index) => MostPopularWidget(
+              brandName: dummyProducts[index].brandName,
+              imagePath: dummyProducts[index].imagePath,
+              price: ConstantUtils.format
+                  .format(dummyProducts[index].productPrice),
+              rating: dummyProducts[index].rating,
+              shoeColor: dummyProducts[index].shoeColor,
+              shoeType: dummyProducts[index].shoeType,
             ),
           ),
         ),
@@ -95,7 +93,7 @@ class _MostPopularWidgetState extends State<MostPopularWidget> {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,21 +118,22 @@ class _MostPopularWidgetState extends State<MostPopularWidget> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      child: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            isSelected = !isSelected;
-                          });
-                        },
-                        icon: isSelected
-                            ? const Icon(Icons.favorite)
-                            : const Icon(Icons.favorite_border),
-                        iconSize: 30,
-                      ),
-                    )
+                    // Positioned(
+                    //   right: 0,
+                    //   top: 0,
+                    //   child: IconButton(
+                    //      splashRadius: 20,
+                    //     onPressed: () {
+                    //       setState(() {
+                    //         isSelected = !isSelected;
+                    //       });
+                    //     },
+                    //     icon: isSelected
+                    //         ? const Icon(Icons.favorite)
+                    //         : const Icon(Icons.favorite_border),
+                    //     iconSize: 30,
+                    //   ),
+                    // )
                   ],
                 ),
               ),

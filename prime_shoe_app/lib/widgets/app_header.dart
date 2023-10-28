@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobx/mobx.dart';
 import 'package:prime_shoe_app/core/constants.dart';
 import 'package:prime_shoe_app/store/shoe_store.dart';
 
@@ -21,7 +22,8 @@ class AppHeader extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {
-              store.selectedNavBarOnTap(0);
+              runInAction(() => store.selectedNavBarOnTap(0));
+              
             },
             icon: const Icon(Icons.favorite_border_outlined),
             iconSize: 30,
