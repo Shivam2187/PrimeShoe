@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:prime_shoe_app/core/color.dart';
 import 'package:prime_shoe_app/core/constants.dart';
 import 'package:prime_shoe_app/store/shoe_store.dart';
 
-import '../model/dummy_prduct_details.dart';
+import '../model/product_list.dart';
 
 class MostPopular extends StatelessWidget {
   MostPopular({super.key});
@@ -40,15 +39,15 @@ class MostPopular extends StatelessWidget {
           crossAxisCount: 2,
           childAspectRatio: .5,
           children: List<Widget>.generate(
-            dummyProducts.length,
+            productList.length,
             (index) => MostPopularWidget(
-              brandName: dummyProducts[index].brandName,
-              imagePath: dummyProducts[index].imagePath,
+              brandName: productList[index].brandName,
+              imagePath: productList[index].imagePath,
               price: ConstantUtils.format
-                  .format(dummyProducts[index].productPrice),
-              rating: dummyProducts[index].rating,
-              shoeColor: dummyProducts[index].shoeColor,
-              shoeType: dummyProducts[index].shoeType,
+                  .format(productList[index].productPrice),
+              rating: productList[index].rating,
+              shoeColor: productList[index].shoeColor,
+              shoeType: productList[index].shoeType,
             ),
           ),
         ),
@@ -118,22 +117,22 @@ class _MostPopularWidgetState extends State<MostPopularWidget> {
                         ),
                       ),
                     ),
-                    // Positioned(
-                    //   right: 0,
-                    //   top: 0,
-                    //   child: IconButton(
-                    //      splashRadius: 20,
-                    //     onPressed: () {
-                    //       setState(() {
-                    //         isSelected = !isSelected;
-                    //       });
-                    //     },
-                    //     icon: isSelected
-                    //         ? const Icon(Icons.favorite)
-                    //         : const Icon(Icons.favorite_border),
-                    //     iconSize: 30,
-                    //   ),
-                    // )
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: IconButton(
+                         splashRadius: 20,
+                        onPressed: () {
+                          setState(() {
+                            isSelected = !isSelected;
+                          });
+                        },
+                        icon: isSelected
+                            ? const Icon(Icons.favorite)
+                            : const Icon(Icons.favorite_border),
+                        iconSize: 30,
+                      ),
+                    )
                   ],
                 ),
               ),

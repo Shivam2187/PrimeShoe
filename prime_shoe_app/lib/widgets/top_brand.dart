@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/dummy_brand_details.dart';
+import '../model/brand_type_list.dart';
 
 class TopBrand extends StatelessWidget {
   const TopBrand({super.key});
@@ -10,15 +10,15 @@ class TopBrand extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: topBrandModel.length,
+      itemCount: brandTypeList.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           mainAxisSpacing: 5,
           crossAxisSpacing: 30,
           childAspectRatio: .65),
       itemBuilder: (context, index) => TopBrandWidget(
-          imagePath: topBrandModel.elementAt(index).imagePath,
-          brandName: topBrandModel.elementAt(index).brandName),
+          imagePath: brandTypeList.elementAt(index).imagePath,
+          brandName: brandTypeList.elementAt(index).brandName),
     );
   }
 }

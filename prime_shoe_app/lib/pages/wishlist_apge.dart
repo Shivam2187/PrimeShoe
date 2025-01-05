@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prime_shoe_app/core/constants.dart';
 import 'package:prime_shoe_app/widgets/app_bar.dart';
 
-import '../model/dummy_prduct_details.dart';
+import '../model/product_list.dart';
 
 import '../widgets/most_popular.dart';
 

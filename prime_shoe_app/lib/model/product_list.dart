@@ -1,6 +1,6 @@
 import 'package:prime_shoe_app/model/product_details.dart';
 
-List<ProductDetails> dummyProducts = [
+List<ProductDetails> productList = [
   ProductDetails(
       brandName: 'Adidas',
       imagePath: 'assets/shoe/adidasShoe.png',
