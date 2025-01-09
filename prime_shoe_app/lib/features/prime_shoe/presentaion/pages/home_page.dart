@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prime_shoe_app/core/constants.dart';
-import 'package:prime_shoe_app/widgets/app_header.dart';
-import 'package:prime_shoe_app/widgets/most_popular.dart';
-import 'package:prime_shoe_app/widgets/top_brand.dart';
+import 'package:prime_shoe_app/features/prime_shoe/presentaion/widgets/app_header.dart';
+import 'package:prime_shoe_app/features/prime_shoe/presentaion/widgets/most_popular.dart';
+import 'package:prime_shoe_app/features/prime_shoe/presentaion/widgets/top_brand.dart';
 
-import '../core/input_decoration.dart';
+import '../../../../core/input_decoration.dart';
 import '../widgets/preview_image.dart';
 
 class HomePage extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:prime_shoe_app/model/product_details.dart';
+import '../../../../model/product_details.dart';
 
 List<ProductDetails> productList = [
   ProductDetails(

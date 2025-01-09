@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:prime_shoe_app/store/shoe_store.dart';
+import 'package:prime_shoe_app/features/prime_shoe/presentaion/store/shoe_store.dart';
 
 import '../widgets/navigation_bar.dart';
 

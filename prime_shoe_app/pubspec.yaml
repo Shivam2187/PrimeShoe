@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   json_annotation: ^4.8.1
   intl: ^0.18.1
+  dio: ^5.7.0
    
 
 dev_dependencies:

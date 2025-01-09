@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:prime_shoe_app/core/color.dart';
 import 'package:prime_shoe_app/core/constants.dart';
-import 'package:prime_shoe_app/store/shoe_store.dart';
+import 'package:prime_shoe_app/features/prime_shoe/presentaion/store/shoe_store.dart';
 
-import '../model/product_list.dart';
+import '../../data/model/product_list.dart';
 
 class MostPopular extends StatelessWidget {
   MostPopular({super.key});
@@ -43,8 +43,8 @@ class MostPopular extends StatelessWidget {
             (index) => MostPopularWidget(
               brandName: productList[index].brandName,
               imagePath: productList[index].imagePath,
-              price: ConstantUtils.format
-                  .format(productList[index].productPrice),
+              price:
+                  ConstantUtils.format.format(productList[index].productPrice),
               rating: productList[index].rating,
               shoeColor: productList[index].shoeColor,
               shoeType: productList[index].shoeType,
@@ -92,7 +92,7 @@ class _MostPopularWidgetState extends State<MostPopularWidget> {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +121,7 @@ class _MostPopularWidgetState extends State<MostPopularWidget> {
                       right: 0,
                       top: 0,
                       child: IconButton(
-                         splashRadius: 20,
+                        splashRadius: 20,
                         onPressed: () {
                           setState(() {
                             isSelected = !isSelected;

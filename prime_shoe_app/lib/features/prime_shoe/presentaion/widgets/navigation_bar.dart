@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prime_shoe_app/pages/home_page.dart';
+import 'package:prime_shoe_app/features/prime_shoe/presentaion/screens/home_page.dart';
 
-import '../pages/wishlist_apge.dart';
+import '../screens/wishlist_apge.dart';
 
 class AppNavigationBar extends StatelessWidget {
   final void Function(int)? onTap;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/brand_type_list.dart';
+import '../../data/model/brand_type_list.dart';
 
 class TopBrand extends StatelessWidget {
   const TopBrand({super.key});
