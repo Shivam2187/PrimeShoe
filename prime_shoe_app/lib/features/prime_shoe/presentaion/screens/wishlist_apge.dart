@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prime_shoe_app/core/constants.dart';
+import 'package:prime_shoe_app/core/locator.dart';
 import 'package:prime_shoe_app/features/prime_shoe/presentaion/widgets/app_bar.dart';
 
-import '../../data/model/product_list.dart';
-
+import '../store/shoe_store.dart';
 import '../widgets/most_popular.dart';
 
 class WishListPage extends StatelessWidget {
@@ -11,6 +10,8 @@ class WishListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = locator.get<ShoeStore>();
+    final dummyWishlistProducts = store.productDetailsList.value;
     return Scaffold(
       appBar: defaultAppBar(),
       body: Padding(
@@ -28,8 +29,7 @@ class WishListPage extends StatelessWidget {
             itemBuilder: (context, index) => MostPopularWidget(
               brandName: dummyWishlistProducts[index].brandName,
               imagePath: dummyWishlistProducts[index].imagePath,
-              price: ConstantUtils.format
-                  .format(dummyWishlistProducts[index].productPrice),
+              price: dummyWishlistProducts[index].productPrice,
               rating: dummyWishlistProducts[index].rating,
               shoeColor: dummyWishlistProducts[index].shoeColor,
               shoeType: dummyWishlistProducts[index].shoeType,

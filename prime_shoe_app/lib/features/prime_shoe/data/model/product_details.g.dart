@@ -10,19 +10,8 @@ ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>
     ProductDetails(
       brandName: json['brandName'] as String,
       imagePath: json['imagePath'] as String,
-      productPrice: (json['productPrice'] as num).toDouble(),
-      rating: json['rating'] as num,
+      productPrice: json['shoePrice'] as String,
+      rating: json['rating'] as String,
       shoeColor: json['shoeColor'] as String,
       shoeType: json['shoeType'] as String,
     );
-
-// ignore: unused_element
-Map<String, dynamic> _$ProductDetailsToJson(ProductDetails instance) =>
-    <String, dynamic>{
-      'brandName': instance.brandName,
-      'rating': instance.rating,
-      'shoeType': instance.shoeType,
-      'shoeColor': instance.shoeColor,
-      'productPrice': instance.productPrice,
-      'imagePath': instance.imagePath,
-    };

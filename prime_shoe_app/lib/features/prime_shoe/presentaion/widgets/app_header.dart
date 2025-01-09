@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:prime_shoe_app/core/constants.dart';
+import 'package:prime_shoe_app/core/locator.dart';
 import 'package:prime_shoe_app/features/prime_shoe/presentaion/store/shoe_store.dart';
 
 class AppHeader extends StatelessWidget {
   AppHeader({super.key});
 
-  final store = ShoeStore();
+  final store = locator.get<ShoeStore>();
 
   @override
   Widget build(BuildContext context) {

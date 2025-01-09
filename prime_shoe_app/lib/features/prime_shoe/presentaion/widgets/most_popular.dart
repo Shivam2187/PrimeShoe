@@ -1,58 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:prime_shoe_app/core/color.dart';
 import 'package:prime_shoe_app/core/constants.dart';
+import 'package:prime_shoe_app/core/locator.dart';
 import 'package:prime_shoe_app/features/prime_shoe/presentaion/store/shoe_store.dart';
 
-import '../../data/model/product_list.dart';
-
 class MostPopular extends StatelessWidget {
-  MostPopular({super.key});
-  final store = ShoeStore();
+  const MostPopular({super.key});
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            const Text(
-              'Most Popular',
-              style: TextStyle(fontSize: 16),
-            ),
-            const Spacer(),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'SEE ALL',
-                style: TextStyle(fontSize: 12, color: Colors.black),
+    final store = locator.get<ShoeStore>();
+    return Observer(builder: (context) {
+      final productList = store.productDetailsList.value;
+
+      return Column(
+        children: [
+          Row(
+            children: [
+              const Text(
+                'Most Popular',
+                style: TextStyle(fontSize: 16),
               ),
-            )
-          ],
-        ),
-        const SizedBox(
-          height: 12,
-        ),
-        GridView.count(
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          crossAxisCount: 2,
-          childAspectRatio: .5,
-          children: List<Widget>.generate(
-            productList.length,
-            (index) => MostPopularWidget(
-              brandName: productList[index].brandName,
-              imagePath: productList[index].imagePath,
-              price:
-                  ConstantUtils.format.format(productList[index].productPrice),
-              rating: productList[index].rating,
-              shoeColor: productList[index].shoeColor,
-              shoeType: productList[index].shoeType,
+              const Spacer(),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'SEE ALL',
+                  style: TextStyle(fontSize: 12, color: Colors.black),
+                ),
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          GridView.count(
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            crossAxisCount: 2,
+            childAspectRatio: .5,
+            children: List<Widget>.generate(
+              productList.length,
+              (index) => MostPopularWidget(
+                brandName: productList[index].brandName,
+                imagePath: productList[index].imagePath,
+                price: productList[index].productPrice,
+                rating: productList[index].rating,
+                shoeColor: productList[index].shoeColor,
+                shoeType: productList[index].shoeType,
+              ),
             ),
           ),
-        ),
-      ],
-    );
+        ],
+      );
+    });
   }
 }
 
@@ -60,7 +63,7 @@ class MostPopularWidget extends StatefulWidget {
   final String imagePath;
   final String shoeType;
   final String shoeColor;
-  final num rating;
+  final String rating;
   final String price;
   final String brandName;
 
@@ -161,7 +164,7 @@ class _MostPopularWidgetState extends State<MostPopularWidget> {
                 child: Row(
                   children: [
                     Text(
-                      widget.rating.toString(),
+                      widget.rating,
                       style: const TextStyle(
                           fontSize: 15, fontWeight: FontWeight.bold),
                     ),
